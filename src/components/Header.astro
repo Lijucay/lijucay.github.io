@@ -1,0 +1,25 @@
+---
+import brandLight from '@site/assets/brand/light/logo-compact.svg';
+import brandDark from '@site/assets/brand/dark/logo-compact.svg';
+
+const { title, showLogo, showGithub } = Astro.props as {
+    title?: string;
+    showLogo: boolean;
+    showGithub: boolean;
+};
+---
+
+<header class={`bg-(--color-surface) h-20 flex pt-[1rem] leading-[1.5] align-middle ${(showGithub === true && showLogo === true) ? 'justify-between' : 'justify-center'}`}>
+    <a href="/" class={`m-4 items-center gap-2 hover:opacity-80 focus:opacity-60 transition-all ${showLogo === true ? 'flex' : 'hidden'}`}>
+        <object data={brandLight.src} type="image/svg+xml" class="w-24 dark:hidden pointer-events-none select-none"/>
+        <object data={brandDark.src} type="image/svg+xml" class="w-24 hidden dark:block pointer-events-none select-none"/>
+    </a>
+    {
+        title &&
+        (<p class="font-extrabold text-2xl text-(--color-on-surface)">{title}</p>)
+    }
+    {
+        showGithub === true &&
+        (<a type="button" href="https://github.com/Lijucay" class="hover:opacity-80 focus:opacity-60 transition-all text-(--color-on-tertiary) font-bold bg-(--color-tertiary) rounded-full h-12 px-6 py-3">GitHub</a>)
+    }
+</header>

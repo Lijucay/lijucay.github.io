@@ -1,0 +1,19 @@
+---
+const { banner, title, description, url } = Astro.props as {
+    banner?: string,
+    title: string,
+    description: string,
+    url: string
+}
+---
+
+<div class="m-8">
+    <div class="rounded-3xl md:max-w-70 p-6 bg-(--color-primary-container) color-(--color-primary-on-container) overflow-hidden">
+        {banner && <img class="rounded-xl md:max-w-58 md:max-h-58" src={banner}/>}
+        <div>
+            <h1 class="mt-3 mb-3 font-extrabold text-2xl text-(--color-primary-on-container)">{title}</h1>
+            <p class="text-(--color-primary-on-container)">{description}</p>
+            <a class="text-(--color-tertiary-on-container)" href={url}><p class="mt-4 text-end">Read more ➤</p></a>
+        </div>
+    </div>
+</div>
