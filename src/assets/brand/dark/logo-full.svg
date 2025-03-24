@@ -1,14 +1,12 @@
-<?xml-stylesheet type="text/css" href="/styles/global.css" ?>
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150">
 
   <rect width="600" height="150" fill="transparent"/>
   
-  <text x="0" y="100" font-size="120" fill="#A0AEC0">{</text>
+  <text x="0" y="100" font-size="120" fill="#A0AEC0" font-family="sans-serif">{</text>
   
-  <text x="70" y="110" font-size="120" fill="#63B3ED">L</text>
+  <text x="55" y="110" font-size="120" fill="#63B3ED" font-family="sans-serif">L</text>
   
-  <text x="140" y="100" font-size="120" fill="#A0AEC0">}</text>
+  <text x="140" y="100" font-size="120" fill="#A0AEC0" font-family="sans-serif">}</text>
   
-  <text x="210" y="110" font-size="120" fill="#63B3ED">Lijucay</text>
+  <text x="210" y="110" font-size="120" fill="#63B3ED" font-family="sans-serif">Lijucay</text>
 </svg>

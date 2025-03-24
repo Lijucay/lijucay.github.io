@@ -1,15 +1,13 @@
-<?xml-stylesheet type="text/css" href="/src/styles/global.css" ?>
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
   <!-- Dark background rectangle -->
   <rect width="200" height="150" fill="transparent"/>
   
   <!-- Left curly brace - rounded -->
-  <text x="0" y="100" font-size="120" fill="#2D3748">{</text>
+  <text x="0" y="100" font-size="120" fill="#2D3748" font-family="sans-serif">{</text>
   
   <!-- Letter L -->
-  <text x="70" y="100" font-size="120" fill="#4299E1">L</text>
+  <text x="55" y="110" font-size="120" fill="#4299E1" font-family="sans-serif">L</text>
   
   <!-- Right curly brace - rounded -->
-  <text x="140" y="100" font-size="120" fill="#2D3748">}</text>
+  <text x="140" y="100" font-size="120" fill="#2D3748" font-family="sans-serif">}</text>
 </svg>
