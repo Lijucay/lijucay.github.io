@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import 'tailwindcss';
+
 @plugin '@tailwindcss/typography';
+@plugin 'tailwind-scrollbar-hide';
 
 @theme {
   /* Primary */
@@ -191,11 +192,109 @@
   }
 }
 
-* {
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
     font-family: "Jetbrains Mono", sans-serif;
+    @apply break-words;
     line-height: 1.5;
 }
 
 svg text {
   font-family: 'Jetbrains Mono', sans-serif
+}
+
+.blog-entry {
+  
+
+  h1 {
+    @apply text-3xl pt-6 font-extrabold
+  }
+
+  h2 {
+    @apply text-2xl pt-6 font-extrabold
+  }
+
+  h3 {
+    @apply text-xl pt-6 font-extrabold
+  }
+
+  h4 {
+    @apply text-lg pt-6 font-extrabold
+  }
+
+  h5 {
+    @apply text-base pt-6 font-extrabold
+  }
+
+  h6 {
+    @apply text-sm pt-6 font-extrabold
+  }
+
+  pre {
+    @apply bg-(--color-surface-container-high) overflow-y-auto scrollbar-hide p-4 rounded-xl my-4
+  }
+
+  .hljs-number,
+  .hljs-literal,
+  .hljs-symbol,
+  .hljs-bullet {
+    @apply text-(--color-tertiary)
+  }
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-deletion {
+    @apply text-(--color-primary)
+  }
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-link {
+    @apply text-(--color-error)
+  }
+  .hljs-comment,
+  .hljs-quote {
+    @apply text-(--color-secondary)
+  }
+  .hljs-meta {
+    @apply text-(--color-on-surface-variant)
+  }
+  .hljs-string,
+  .hljs-attribute,
+  .hljs-addition {
+    @apply text-(--color-tertiary)
+  }
+  .hljs-section,
+  .hljs-title,
+  .hljs-type {
+    @apply text-(--color-error)
+  }
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class {
+    @apply text-(--color-primary-container)
+  }
+  
+  .hljs-emphasis {
+    font-style: italic
+  }
+  .hljs-strong {
+    font-weight: bold
+  }
+
+  [data-node-type="callout"] {
+    @apply bg-(--color-surface-container) p-4 rounded-3xl flex content-start items-center my-4
+  }
+
+  [data-node-type="callout-emoji"] {
+    @apply text-(--color-surface-on-container) text-[1.5rem];
+}
+
+[data-node-type="callout-text"] {
+    @apply text-(--color-surface-on-container) pl-4
+}
 }

@@ -1,0 +1,39 @@
+---
+import Header from "@site/components/Header.astro";
+import Layout from "@site/layouts/Layout.astro";
+import { fetchPosts } from "@site/utils/blog";
+import { getBlogContent } from "@site/utils/blog";
+import '@site/styles/global.css';
+
+
+
+const { id } = Astro.params;
+const post = await getBlogContent(id);
+
+let postContent = "";
+
+if (post) {
+    postContent = post.content.html;
+}
+
+export async function getStaticPaths() {
+    const posts = await fetchPosts();
+    if (posts) {
+        return posts.edges?.map(post => ({
+            params: { id: post.node.id }
+        }));
+    } else {
+        return [];
+    }
+}
+---
+
+<Layout>
+    {post ? (
+        <Header title={post.title}/>
+        <article set:html={postContent} class="blog-entry max-w-[80%] mx-auto text-(--color-on-background)"/>
+        <div class="mb-8"></div>
+    ) : (
+        <Header title="Content not found"/>
+    )}
+</Layout>
