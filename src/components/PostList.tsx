@@ -5,15 +5,18 @@ type PostListProps = {
     posts: PostEdge[];
     pageList: number[];
     currentPage: number;
-    nextPage?: number,
-    previousPage?: number,
+    nextPage?: number | null,
+    previousPage?: number | null,
 };
 
 const PostList: React.FC<PostListProps> = ({ posts, pageList, currentPage, nextPage, previousPage }) => {
     return (
         posts.length > 0 ? (
-            <div className='flex-grow'>
-            <div className='columns-1 md:columns-2 gap-6 space-y-6 p-4 lg:px-16 xl:px-32'>
+            <div className='flex-grow p-4 lg:px-16 xl:px-32'>
+                <div key="title">
+                    <p className="text-(--color-primary) text-[70px] font-extrabold">Blog</p>
+                </div>
+            <div className='columns-1 md:columns-2 gap-6 space-y-6'>
                 {posts.map((postEdge) => {
                     const post = postEdge.node;
 
